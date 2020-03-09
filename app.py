@@ -2,7 +2,7 @@ from flask import Flask
 from redis import Redis, RedisError
 
 # Connect to Redis.
-redis = Redis(host='localhost', port=6379, db=0)
+redis = Redis(host='redis')
 app = Flask(__name__)
 
 
@@ -25,4 +25,4 @@ def hello():
 
 if __name__ == "__main__":
     # Run application on port 80.
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
